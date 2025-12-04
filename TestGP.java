@@ -1,3 +1,8 @@
+import java.util.Scanner
+import binary.Generation
+import binary.GPTree
+import java.util.ArrayList
+    
 public class TestGP {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
