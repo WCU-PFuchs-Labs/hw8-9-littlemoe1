@@ -1,23 +1,38 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+import binary.Generation;
+import binary.GPTree;
 
 public class TestGeneration {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter data file name: ");
-        String fileName = sc.nextLine();
+        String fileName = sc.nextLine().trim();
+        sc.close();
 
-        Generation g = new Generation(500, 3, fileName);
-        g.evalAll();
+        Generation gen = new Generation(500, 6, fileName);
 
-        g.printBestTree();
-        g.printBestFitness();
+        gen.evalAll();
 
-        System.out.print("Top Ten Fitness Values:\n");
-        ArrayList<GPTree> topTen = g.getTopTen();
-        for (int i = 0; i < topTen.size(); i++) {
-            System.out.printf("%.2f", topTen.get(i).getFitness());
-            if (i < topTen.size() - 1) System.out.print(", ");
+        gen.printBestTree();
+
+        gen.printBestFitness();
+
+        ArrayList<GPTree> topTenTrees = gen.getTopTen();
+
+        System.out.print("Top Ten Fitness Values: ");
+
+        for (int i = 0; i < topTenTrees.size(); i++) {
+            double fitnessValue = topTenTrees.get(i).getFitness();
+
+            System.out.printf("%.2f", fitnessValue);
+
+            if (i < topTenTrees.size() - 1) {
+                System.out.print(", ");
+            }
         }
+
         System.out.println();
     }
 }
