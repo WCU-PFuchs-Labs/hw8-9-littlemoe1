@@ -1,13 +1,25 @@
-
-
 public class GPTree implements Comparable<GPTree>, Cloneable {
-    private Node root;        // root node of expression tree
-    private double fitness;   // computed fitness
+
+    private Node root;
+    private double fitness;
+
+    public GPTree() {
+        this.root = new Node();   // basic default tree
+    }
+
+    public GPTree(int maxDepth, Random rand) {
+        this.root = new Node();   // TODO: generate random tree here
+    }
+
+    public double eval(double x) {
+        if (root == null) return 0.0;
+        return root.eval(x);
+    }
 
     public void evalFitness(DataSet dataSet) {
         double sumSqError = 0;
         for (DataRow row : dataSet) {
-            double predicted = eval(row.getX()); // existing eval(double[]) or eval(double)
+            double predicted = eval(row.getX());
             double actual = row.getY();
             double diff = predicted - actual;
             sumSqError += diff * diff;
@@ -25,20 +37,18 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || !(o instanceof GPTree)) return false;
-        return this.compareTo((GPTree)o) == 0;
-    }
-
-    @Override
     public Object clone() {
         try {
             GPTree copy = (GPTree) super.clone();
-            copy.root = (Node) root.clone(); // or new Node(root) if you have a copy constructor
+            copy.root = (Node) root.clone();
             return copy;
         } catch (CloneNotSupportedException e) {
             return null;
         }
+    }
+
+    // placeholder crossover
+    public void crossover(GPTree other) {
+        // TODO: implement real crossover
     }
 }
