@@ -19,6 +19,13 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
         if (root == null) return 0.0;
         return root.eval(x);
     }
+   
+    @Override
+public String toString() {
+    if (root == null) return "(null)";
+    return root.toString();
+}
+
 
     public void evalFitness(DataSet dataSet) {
         double sumSqError = 0;
