@@ -1,6 +1,6 @@
 import java.util.Scanner;
-import binary.Generation;
-import binary.GPTree;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TestGP {
