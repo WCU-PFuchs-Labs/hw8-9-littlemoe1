@@ -31,6 +31,12 @@ public class Node implements Cloneable {
         // placeholder eval function you can replace with real operators
         return value; 
     }
+    @Override
+public String toString() {
+
+    return "(" + value + ")";
+}
+
 
     public Node getLeft() { return left; }
     public Node getRight() { return right; }
