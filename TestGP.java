@@ -33,7 +33,7 @@ public class TestGP {
             gen.printBestTree();
             gen.printBestFitness();
             ArrayList<GPTree> topTen = gen.getTopTen();
-            System.out.print("Top 10 fitness values: ");
+            System.out.print("Top Ten Fitness Values: ");
             for (int i = 0; i < topTen.size(); i++) {
                 double fit = topTen.get(i).getFitness();
                 System.out.printf("%.2f", fit);
