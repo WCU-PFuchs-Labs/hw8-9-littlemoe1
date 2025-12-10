@@ -1,15 +1,19 @@
+import java.util.Random;
+
 public class GPTree implements Comparable<GPTree>, Cloneable {
 
     private Node root;
     private double fitness;
 
     public GPTree() {
-        this.root = new Node();   // basic default tree
+        this.root = new Node();
     }
 
     public GPTree(int maxDepth, Random rand) {
-        this.root = new Node();   // TODO: generate random tree here
+        this.root = new Node();
     }
+    ...
+}
 
     public double eval(double x) {
         if (root == null) return 0.0;
