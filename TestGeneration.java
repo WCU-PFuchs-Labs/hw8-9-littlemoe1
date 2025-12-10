@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Scanner;    
 import binary.GPTree;
+import binary.Generation; 
 
 public class TestGeneration {
 
@@ -14,7 +16,6 @@ public class TestGeneration {
         gen.evalAll();
 
         gen.printBestTree();
-
         gen.printBestFitness();
 
         ArrayList<GPTree> topTenTrees = gen.getTopTen();
@@ -23,7 +24,6 @@ public class TestGeneration {
 
         for (int i = 0; i < topTenTrees.size(); i++) {
             double fitnessValue = topTenTrees.get(i).getFitness();
-
             System.out.printf("%.2f", fitnessValue);
 
             if (i < topTenTrees.size() - 1) {
