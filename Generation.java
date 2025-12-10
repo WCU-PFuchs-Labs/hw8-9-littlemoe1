@@ -1,3 +1,9 @@
+package binary;
+
+import java.util.Random;
+import java.util.Arrays;
+import java.util.ArrayList;
+
 public class Generation {
     private GPTree[] trees;
     private DataSet data;
@@ -7,7 +13,7 @@ public class Generation {
         data = new DataSet(fileName);
         trees = new GPTree[size];
         for (int i = 0; i < size; i++) {
-            trees[i] = new GPTree(maxDepth, rand); // assuming you have a constructor like this
+            trees[i] = new GPTree(maxDepth, rand); // assuming GPTree has such a constructor
         }
     }
 
@@ -39,8 +45,8 @@ public class Generation {
         GPTree[] nextGen = new GPTree[trees.length];
         for (int i = 0; i < trees.length / 2; i++) {
             // Pick two parents among more fit ones
-            GPTree parent1 = trees[rand.nextInt(trees.length / 4)];
-            GPTree parent2 = trees[rand.nextInt(trees.length / 4)];
+            GPTree parent1 = trees[rand.nextInt(Math.max(1, trees.length / 4))];
+            GPTree parent2 = trees[rand.nextInt(Math.max(1, trees.length / 4))];
 
             // Clone and crossover
             GPTree child1 = (GPTree) parent1.clone();
