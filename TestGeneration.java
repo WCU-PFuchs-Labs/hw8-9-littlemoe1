@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-import binary.Generation;
 import binary.GPTree;
 
 public class TestGeneration {
