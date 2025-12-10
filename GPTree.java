@@ -12,8 +12,8 @@ public class GPTree implements Comparable<GPTree>, Cloneable {
     public GPTree(int maxDepth, Random rand) {
         this.root = new Node();
     }
-    ...
-}
+
+
 
     public double eval(double x) {
         if (root == null) return 0.0;
