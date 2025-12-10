@@ -28,7 +28,7 @@ public class Node implements Cloneable {
     }
 
     public double eval(double x) {
-        // placeholder eval function — you can replace with real operators
+        // placeholder eval function you can replace with real operators
         return value; 
     }
 
