@@ -1,4 +1,4 @@
-package binary;
+
 
 public class GPTree implements Comparable<GPTree>, Cloneable {
     private Node root;        // root node of expression tree
